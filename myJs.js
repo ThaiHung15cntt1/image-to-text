@@ -103,7 +103,7 @@ $("document").ready(function() {
         return false;
       }
       if($files[0].type!='image/png' && $files[0].type!='image/jpg' && $files[0].type!='image/jpeg'){
-        openToast('file invalid');
+        openToast('Wrong Image');
         return false;
       }
       else{
@@ -158,6 +158,7 @@ $("document").ready(function() {
        var dkm = JSON.parse(response);
        //$('#inputImage').attr('value', dkm.data.link);
        document.getElementById('inputImage').value = dkm.data.link;
+       openToast('upload done, click button Read Image to start');
         console.log(dkm.data.link);
       });
     }
