@@ -64,23 +64,23 @@ function openInputUrl(){
 function openInputUrlFile(){
   var decriptonOCR = document.getElementById('decriptonOCR');
   var inputLink = document.getElementById('inputLink');
-  // var decriptonWriteHand = document.getElementById('decriptonWriteHand');
+  var decriptonWriteHand = document.getElementById('decriptonWriteHand');
   // decriptonWriteHand.style.display = "none";
   // decriptonOCR.style.display = "none";
   //
 
-  if(count<=1){
+  if(count==0){
       inputLink.style.display = "block";
       decriptonOCR.style.display = "block";
     }
-  //   else if(selectMethod.value==1){
-  //       decriptonWriteHand.style.display = "none";
-  //       decriptonOCR.style.display = "block";
-  //   }
-  //   else if(selectMethod.value==2){
-  //     decriptonOCR.style.display = "none";
-  //     decriptonWriteHand.style.display = "block";
-  //   }
+    // else if(selectMethod.value==1){
+    //     decriptonWriteHand.style.display = "none";
+    //     decriptonOCR.style.display = "block";
+    // }
+    // else if(selectMethod.value==2){
+    //   decriptonOCR.style.display = "none";
+    //   decriptonWriteHand.style.display = "block";
+    // }
   //
   // inputLink.style.display = "block";
   // decriptonOCR.style.display = "block";
@@ -107,6 +107,17 @@ $("document").ready(function() {
         return false;
       }
       else{
+        var areaText = document.getElementById("area-text");
+        var boxImage = document.getElementById("boxImage");
+        var analysisBox = document.getElementById("analysisBox");
+
+        areaText.style.display = "none";
+        boxImage.style.display = "none";
+        analysisBox.style.display = "none";
+
+        document.getElementById('inputImage').value = '';
+
+
         $("#loading").load('loading4.svg');
         $("#loading").css("display", "block");
         //scroll
@@ -145,7 +156,8 @@ $("document").ready(function() {
       $.ajax(settings).done(function(response) {
         $("#loading").css("display", "none");
        var dkm = JSON.parse(response);
-       $('#inputImage').attr('value', dkm.data.link);
+       //$('#inputImage').attr('value', dkm.data.link);
+       document.getElementById('inputImage').value = dkm.data.link;
         console.log(dkm.data.link);
       });
     }
