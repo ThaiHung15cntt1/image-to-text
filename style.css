@@ -1,0 +1,180 @@
+body{
+  background-color: #e9ebee;
+}
+.jumbotron{
+  background-color: #fafafb !important;
+  height: 220px;
+  border-bottom: solib 1px;
+}
+.title{
+  font-family: 'Pathway Gothic One', sans-serif;
+  text-align: center;
+  margin: 0 0 0 0;
+}
+h3{
+  font-size: 35px;
+}
+
+#inputLink{
+  text-align: center;
+  margin: 30px 0 0 0;
+}
+#choice{
+  text-align: center;
+  margin: 30px 0 0 0;
+}
+#iconUrl{
+  position: absolute;
+  top: 140px;
+  margin-left: -40px;
+}
+#iconBrowse{
+  position: absolute;
+  top: 140px;
+  margin-left: -25px;
+}
+
+#btnRead{
+  background-color: #e67e22;
+  color: black;
+  width: 105px;
+  height: 36px;
+  outline: none;
+  border: solib 2px;
+  border-color: black;
+  box-shadow: 0 8px 6px -6px #6d6d6d;
+}
+#inputImage{
+  width: 500px;
+  height: 36px;
+  border: 2px solid;
+  text-indent: 15px;
+  outline: none;
+  box-shadow: 0 8px 6px -6px #6d6d6d;
+}
+#selectMethod{
+    height: 36px;
+    border: 2px solid;
+    box-shadow: 0 8px 6px -6px #6d6d6d;
+}
+.btnInput{
+  color: white;
+  width: 150px;
+  height: 40px;
+  outline: none;
+  background-color: #00c9ad;
+  color: black;
+  border: solid 2px;
+  border-color: black;
+}
+
+#inputImage::-webkit-input-placeholder {
+   padding-left: 2px;
+}
+#main{
+  position: relative;
+  margin-top: 70px;
+}
+#responseTextArea{
+    margin-top: 30px;
+    height: 220px;
+}
+#sourceImage{
+
+}
+img{
+  width: 100%;
+  height: auto;
+}
+.image{
+
+}
+.footer{
+  margin: 500px 0 0 0;
+  width: 100%;
+  height: 100px;
+  background-color: gray;
+}
+.disable{
+  display: none;
+}
+#myProgress {
+  width: 45%;
+  background-color: #ddd;
+  border: solid 2px;
+}
+
+.percen{
+  position: absolute;
+}
+#myBar {
+  width: 1%;
+  height: 20px;
+  background-color: #4CAF50;
+  text-align: center;
+}
+#loading{
+  position: absolute;
+  left: 50%;
+  top: 70%;
+  margin-left: -32px; /* -1 * image width / 2 */
+  margin-top: -32px; /* -1 * image height / 2 */
+}
+#decriptonOCR{
+  width: 750px;
+  font-size: 13px;
+  margin: 0 auto;
+  margin-top: 20px;
+
+}
+#decriptonWriteHand{
+  width: 750px;
+  font-size: 13px;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+.description{
+  min-height: 125px;
+}
+/*toad*/
+#snackbar {
+    visibility: hidden;
+    min-width: 250px;
+    margin-left: -125px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 2px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    bottom: 30px;
+    font-size: 17px;
+}
+
+#snackbar.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+}

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Optical Character Recognition</title>
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Pathway+Gothic+One" rel="stylesheet">
+  </head>
+  <body>
+    <div class="">
+      <header>
+        <div class="jumbotron">
+          <div class="content">
+            <div class="title">
+              <span>
+                <!-- <img src="icon/mindmap.png" id="iconTitle" alt="" style="width:50px;height:50px"> -->
+              <h3>CONVERT IMAGE TO TEXT</h3>
+              </span>
+            </div>
+            <div id="choice">
+              <button type="button" class="btnInput" id="btnOpenInputUrl" onclick="openInputUrl()" name="button"><img src="link2.png" id="iconUrl" alt="" style="width:20px;height:20px">URL</button>
+              <button type="file" class="btnInput" id="btnOpenInputFile" onclick="openInputUrlFile()" name="button"><img src="upload.png" id="iconBrowse" alt="" style="width:20px;height:20px">Browses</button>
+              <input type="file" id="my_file" style="display:none;">
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div class="container">
+        <div id="loading" style="margin-top: 160px;"></div>
+        <div id="inputLink" style="display:none">
+           <input type="text" name="inputImage" id="inputImage" placeholder=" Url Image">
+           <select id="selectMethod" onchange="openDecription()">
+              <option value="1" selected>OCR</option>
+              <option value="2">Handwritten</option>
+          </select>
+           <button id="btnRead" name="button" onclick="readBy()">Read Image</button>
+        </div>
+        <div class="description">
+          <div id="decriptonOCR" style="display:none">
+            <div class="alert alert-info" role="alert">OCR technology detects text content in an image and extracts the
+               identified text into a machine-readable character stream. You can use the result for search
+                and numerous other purposes like medical records, security, and banking. It automatically
+                detects the language. OCR saves time and provides convenience for users by allowing them to
+                take photos of text instead of transcribing the text.</div>
+          </div>
+          <div id="decriptonWriteHand" style="display:none">
+            <div class="alert alert-info" role="alert">This technology allows you to detect and extract
+               handwritten text from notes, letters, essays, whiteboards, forms, etc. It
+               works with different surfaces and backgrounds, such as white paper,
+               yellow sticky notes, and whiteboards.</div>
+               <div class="alert alert-warning" role="alert">this technology is currently in
+                 preview and is only available for English text.</div>
+          </div>
+        </div>
+        <div class="main" id="main">
+          <div class="row" >
+              <div class="col-sm-6">
+                <div id="analysisBox" style="display:none">
+                  <div class="card">
+                    <div class="card-block">
+                      <div class="detectLanguage">
+                        <p id="region"></p>
+                        <div id="myProgress">
+                          <div id="myBar"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                  <div class="card" id="area-text" style="display:none">
+                    <div class="card-block">
+                        <div class="result">
+                            <textarea name="name" id="responseTextArea" class="UIInput" rows="8" cols="60"></textarea>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div id="boxImage" style="display:none">
+                    <div class="card">
+                      <div class="card-block">
+                        <div class="image">
+                            <img id="sourceImage" onerror="common.imageLoadError()">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="disable">
+        <input type="text" class="subKeyInput" name="subscriptionKeyInput" value="527fa26da94545ca9e047d60c87184f7" id="subscriptionKeyInput"
+        onchange="common.subscriptionChange()" value="Copy/paste your subscription key here.">
+        <select name="subscriptionRegionSelect" id="subscriptionRegionSelect" onchange="common.subscriptionChange()">
+                      <option value="westcentralus" selected>westcentralus</option>
+                      <option value="westus">westus</option>
+                      <option value="eastus2">eastus2</option>
+                      <option value="westeurope">westeurope</option>
+                      <option value="southeastasia">southeastasia</option>
+        </select>
+      </div>
+    </div>
+
+
+  <div id="snackbar"></div>
+  <footer class="footer"></footer>
+
+      <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js" charset="utf-8"></script>
+      <script src="jquery.min.js" charset="utf-8"></script>
+      <script src="bootstrap.min.js" charset="utf-8"></script>
+      <script src="common.js" charset="utf-8"></script>
+      <script src="myJs.js" charset="utf-8"></script>>
+  </body>
+</html>
